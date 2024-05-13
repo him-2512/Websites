@@ -1,13 +1,11 @@
 .main {
+  flex: 1;
   min-height: 100vh;
-
   padding-bottom: 15vh;
   position: relative;
-
-  flex: 1;
 }
 
-.nav {
+.main .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +14,7 @@
   color: #585858;
 }
 
-img {
+.main .nav img {
   width: 40px;
   border-radius: 50%;
 }
@@ -26,37 +24,37 @@ img {
   margin: auto;
 }
 
-.greet {
-  margin: 50px 0px;
+.main .greet {
+  margin: 50px 0;
   font-size: 56px;
   color: #c4c7c5;
   font-weight: 500;
   padding: 20px;
 }
 
-.greet span {
+.main .greet span {
   background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.cards {
+.main .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 
-.card {
+.main .card {
   height: 200px;
   padding: 15px;
   background-color: #f0f4f9;
-  border-radius: 15px;
+  border-radius: 10px;
   position: relative;
   cursor: pointer;
 }
 
-.card img {
+.main .card img {
   width: 35px;
   padding: 5px;
   position: absolute;
@@ -66,17 +64,17 @@ img {
   right: 10px;
 }
 
-.card p {
+.main .card p {
   color: #585858;
   font-size: 17px;
 }
 
-.card:hover {
+.main .card:hover {
   background-color: #dfe4ea;
 }
 
 .main-bottom {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   max-width: 900px;
@@ -91,8 +89,7 @@ img {
   gap: 20px;
   background-color: #f0f4f9;
   padding: 10px 20px;
-  border-radius: 50px;
-  box-shadow: 0px 0px 30px 25px white;
+  border-radius: 25px;
 }
 
 .search-box img {
@@ -109,13 +106,13 @@ img {
   font-size: 18px;
 }
 
-.search-box > div {
+.search-box div {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.bottom-info {
+.main .bottom-info {
   font-size: 13px;
   margin: 15px auto;
   text-align: center;
@@ -123,7 +120,7 @@ img {
 }
 
 .result {
-  padding: 10px 5px;
+  padding: 0 5%;
   max-height: 70vh;
   overflow-y: scroll;
 }
@@ -133,7 +130,7 @@ img {
 }
 
 .result-title {
-  margin: 40px 0px;
+  margin: 40px 0;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -160,8 +157,8 @@ img {
 .loader hr {
   border-radius: 4px;
   border: none;
-  background-color: #f6f7f8;
-  background: linear-gradient(to right, #6588a1, #ffffff, #6588a1);
+  background-color: #5a88b7;
+  background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
   background-size: 800px 50px;
   height: 20px;
   animation: loader 3s infinite linear;
@@ -169,7 +166,7 @@ img {
 
 @keyframes loader {
   0% {
-    background-position: -800px;
+    background-position: -800px 0px;
   }
   100% {
     background-position: 800px 0px;
@@ -180,4 +177,20 @@ img {
   font-size: 17px;
   font-weight: 300;
   line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .main-bottom input {
+    flex: none;
+    width: 150px;
+  }
+  .main-bottom img {
+    width: 20px;
+  }
+  .search-box {
+    padding: 5px 10px;
+  }
+  .search-box div {
+    gap: 5px;
+  }
 }
